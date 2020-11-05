@@ -1,0 +1,33 @@
+#该项目的一些配置
+server:
+  port: 9009  #tomcat端口号
+  servlet:
+    context-path: / #项目根路径/应用上下文路径
+
+mybatis-plus:
+  mapper-locations:
+    - classpath:/mapper/*Mapper.xml
+  # 指定sql映射文件位置
+  global-config:
+    db-config:
+      logic-delete-value: 1
+      logic-not-delete-value: 0
+
+#druid连接池配置
+spring:
+  datasource:
+    # jdbc配置
+    driver-class-name: com.mysql.jdbc.Driver
+    username: root
+    password: 123456
+    url: jdbc:mysql://localhost:3306/order?useUnicode=true&characterEncoding&useSSL=false&serverTimezone=UTC
+    # 指定数据库连接池类型，不指定则默认使用hikari
+    type: com.alibaba.druid.pool.DruidDataSource
+    # druid连接池配置
+    initialSize: 1  #初始化大小
+    maxActive: 20 #最大连接数
+    minIdle: 1  #最小连接数
+    maxWait: 60000  #获取连接等待超时的时间
+    testOnBorrow: true  #连接时是否检查连接可用性
+    testOnReturn: false #归还连接时是否检查连接可用性
+

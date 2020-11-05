@@ -1,0 +1,41 @@
+server:
+  port: 9006
+spring:
+  #配置rabbitMq 服务器
+  rabbitmq:
+    host: 127.0.0.1
+    port: 5672
+    username: guest #登录用户名（默认的，也可以进行添加用户）
+    password: guest #登录密码（默认的，也可以进行修改）
+    #虚拟host 可以不设置,使用server默认host
+    virtual-host: /hkm
+    #消息确认配置项->>注意:如果使用AMQP模式的消息确认机制，则需要注释掉以下配置
+    #开启 confirm 确认机制,确认消息发送到交换机(Exchange),是否确定回调
+    publisher-confirm-type: correlated
+    #开启 return 确认机制,确认消息发送到队列(Queue),是否确定回调
+    publisher-returns: true
+    #设置为 true后消费者在消息没有被路由到合适队列情况下会被return监听，而不会自动删除
+    template:
+      mandatory: true
+    listener:
+      simple:
+        retry:
+          ####开启消费者异常重试
+          enabled: true
+          ####最大重试次数
+          max-attempts: 5
+          ####重试间隔次数
+          initial-interval: 5000
+        ####默认为自动应答，开启手动ack,只要cosumer没有手动ack，那么消息会一直存在消息队列中，只有手动ack了，才会将消息从消息队列中删除掉
+        acknowledge-mode: manual
+        default-requeue-rejected: false
+
+    boot:
+      admin:
+        notify:
+          mail:
+            #配置是否启用邮件通知 false是不起用
+            enabled: true
+        ##方法一：增加超时时间（单位:ms）
+        monitor:
+          read-timeout: 30000

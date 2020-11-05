@@ -1,0 +1,12 @@
+server:
+  port: 9008
+
+spring:
+  ##include的值为：该模块依赖其他模块的指定的application-后缀名.yml，也就是说会同时加载其他模块的配置文件
+  profiles:
+    include: rabbitmq,data
+  ##配置Admin Server的地址
+#  boot:
+#    admin:
+#      url: http://localhost:8000
+
