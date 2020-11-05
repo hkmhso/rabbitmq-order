@@ -1,5 +1,3 @@
-server:
-  port: 9006
 spring:
   #配置rabbitMq 服务器
   rabbitmq:

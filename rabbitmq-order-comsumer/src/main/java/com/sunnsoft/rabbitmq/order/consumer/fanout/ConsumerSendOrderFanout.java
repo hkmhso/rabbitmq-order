@@ -75,10 +75,10 @@ public class ConsumerSendOrderFanout {
             channel.basicAck(deliveryTag, true);
             PrintUtils.print(this.getClass(),"->>processForManualAckZhangsan()->>外卖小哥张三接单成功，订单编号"+orderNum);
         }catch (DuplicateKeyException e){
-            e.printStackTrace();
+            //e.printStackTrace();
             PrintUtils.print(this.getClass(),"->>processForManualAckZhangsan()->>(张三派单交换机)外卖小哥张三接单失败,丢弃该消息,订单"+orderNum+"已被别的外卖小哥抢走");
         }catch (Exception e){
-            e.printStackTrace();
+            //e.printStackTrace();
             PrintUtils.print(this.getClass(),"->>processForManualAckZhangsan()->>(张三派单交换机)出现异常，丢弃该消息,交给DLX交换机进行消费...");
         }
         //PS:如果出现异常，丢弃该消息，从而消息会交给DLX交换机进行消费
@@ -133,10 +133,10 @@ public class ConsumerSendOrderFanout {
             channel.basicAck(deliveryTag, true);
             PrintUtils.print(this.getClass(),"->>processForManualAckLisi()->>外卖小哥李四接单成功，订单"+orderNum);
         }catch (DuplicateKeyException e){
-            e.printStackTrace();
+           // e.printStackTrace();
             PrintUtils.print(this.getClass(),"->>processForManualAckLisi()->>(李四派单交换机)外卖小哥李四接单失败，丢弃该消息,订单"+orderNum+"已被别的外卖小哥抢走");
         }catch (Exception e){
-            e.printStackTrace();
+           // e.printStackTrace();
             PrintUtils.print(this.getClass(),"->>processForManualAckLisi()->>(李四派单交换机)出现异常，丢弃该消息,交给DLX交换机进行消费...");
         }
         //PS:如果出现异常，丢弃该消息，从而消息会交给DLX交换机进行消费
@@ -191,10 +191,10 @@ public class ConsumerSendOrderFanout {
             channel.basicAck(deliveryTag, true);
             PrintUtils.print(this.getClass(),"->>processForManualAckWlw()->>外卖小哥王老五接单成功，订单"+orderNum);
         }catch (DuplicateKeyException e){
-            e.printStackTrace();
+           // e.printStackTrace();
             PrintUtils.print(this.getClass(),"->>processForManualAckWlw()->>(王老五派单交换机)外卖小哥王老五接单失败，丢弃该消息，订单"+orderNum+"已被别的外卖小哥抢走");
         }catch (Exception e){
-            e.printStackTrace();
+            //e.printStackTrace();
             PrintUtils.print(this.getClass(),"->>processForManualAckWlw()->>(王老五派单交换机)出现异常，丢弃该消息,交给DLX交换机进行消费...");
         }
         //PS:如果出现异常，丢弃该消息，从而消息会交给DLX交换机进行消费

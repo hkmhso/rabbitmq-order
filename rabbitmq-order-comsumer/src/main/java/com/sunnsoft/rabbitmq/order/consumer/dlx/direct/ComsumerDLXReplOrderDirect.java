@@ -55,7 +55,7 @@ public class ComsumerDLXReplOrderDirect {
             PrintUtils.print(this.getClass(),"->>processForManualAckDLXForReplOrder()->>(补单死信交换机)补单成功。。。。");
             channel.basicAck(deliveryTag, true);
         }catch (Exception e){
-            e.printStackTrace();
+            //e.printStackTrace();
             PrintUtils.print(this.getClass(),"->>processForManualAckDLXForReplOrder()->>(补单死信交换机)出现异常，补单失败。。。。");
         }
     }

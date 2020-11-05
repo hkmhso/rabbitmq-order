@@ -74,7 +74,7 @@ public class ConsumerReplOrderFanout {
             // 手动签收,第二个参数，手动确认可以被批处理，当该参数为 true 时，则可以一次性确认 delivery_tag 小于等于传入值的所有消息
             channel.basicAck(deliveryTag, true);
         }catch (Exception e){
-            e.printStackTrace();
+            //e.printStackTrace();
             PrintUtils.print(this.getClass(),"->>processForManualAck()->>(补单交换机)出现异常，补单失败，丢弃该消息,交给DLX交换机进行补单....");
             //PS:如果出现异常，丢弃该消息，从而消息会交给DLX交换机进行消费
             /**

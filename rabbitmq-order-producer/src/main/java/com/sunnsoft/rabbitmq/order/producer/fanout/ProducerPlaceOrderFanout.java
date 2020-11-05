@@ -33,7 +33,7 @@ import java.util.UUID;
  */
 @Component
 @Transactional(rollbackFor = Exception.class)
-public class ProducerSendOrderFanout {
+public class ProducerPlaceOrderFanout {
 
     @Autowired
     private RabbitTemplate rabbitTemplate;
@@ -53,14 +53,14 @@ public class ProducerSendOrderFanout {
      * 根据交换机名称和路由键精确匹配到对应的消息队列
      * @param exchangeName 交换机名称
      */
-    public void sendOrderForConfirm(String exchangeName) throws Exception{
+    public void placeOrderForConfirm(String exchangeName) throws Exception{
         PrintUtils.print(this.getClass(),"->>sendOrderForConfirm()->>有用户下单了，开始进行派单。。。。。");
         JSONObject jsonObject = new JSONObject();
         Long orderNum=Long.valueOf(GenerateOrderId.getRandomOrderId());
         try {
             jsonObject.put("orderNum", orderNum);
         } catch (JSONException e) {
-            e.printStackTrace();
+            //e.printStackTrace();
         }
         String msg = jsonObject.toString();
         String messageId=UUID.randomUUID() + "";

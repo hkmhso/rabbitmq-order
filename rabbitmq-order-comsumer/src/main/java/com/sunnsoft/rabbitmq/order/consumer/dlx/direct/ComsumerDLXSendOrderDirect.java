@@ -56,7 +56,7 @@ public class ComsumerDLXSendOrderDirect {
             channel.basicAck(deliveryTag, true);
             PrintUtils.print(this.getClass(),"->>processForManualAckDLXForZhangsan()->>(张三派单死信交换机）派单成功。。。。");
         }catch (Exception e){
-            e.printStackTrace();
+            //e.printStackTrace();
             PrintUtils.print(this.getClass(),"->>processForManualAckDLXForZhangsan()->>(张三派单死信交换机)出现异常，派单失败,订单"+orderNum+"已被别的外卖小哥抢走。。。。");
         }
     }
@@ -91,7 +91,7 @@ public class ComsumerDLXSendOrderDirect {
             channel.basicAck(deliveryTag, true);
             PrintUtils.print(this.getClass(),"->>processForManualAckDLXForLisi()->>(李四派单死信交换机）派单成功。。。。");
         }catch (Exception e){
-            e.printStackTrace();
+           // e.printStackTrace();
             PrintUtils.print(this.getClass(),"->>processForManualAckDLXForLisi()->>(李四派单死信交换机)出现异常，派单失败,订单"+orderNum+"已被别的外卖小哥抢走。。。");
         }
     }
@@ -126,7 +126,7 @@ public class ComsumerDLXSendOrderDirect {
             channel.basicAck(deliveryTag, true);
             PrintUtils.print(this.getClass(),"->>processForManualAckDLXForWlw()->>(王老五派单死信交换机）派单成功。。。。");
         }catch (Exception e){
-            e.printStackTrace();
+            //e.printStackTrace();
             PrintUtils.print(this.getClass(),"->>processForManualAckDLXForWlw()->>(王老五派单死信交换机)出现异常，派单失败,订单"+orderNum+"已被别的外卖小哥抢走。。。");
         }
     }
