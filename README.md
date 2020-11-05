@@ -1,11 +1,17 @@
 ﻿# rabbitmq-order
+
+> <font size=4>友情提示：请用Markdown编辑器打开。例如有道云笔记，CSDN。
+
 <font size=4>主题：使用RabbitMQ模拟用户下单，外卖小哥抢单的情景。
 
 <font size=4>1、项目搭建：
 
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20201104205824458.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1NTc0MTgw,size_16,color_FFFFFF,t_70#pic_center)
+<br>
 <font size=4>2、架构图：
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20201104203808149.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1NTc0MTgw,size_16,color_FFFFFF,t_70#pic_center =500x200)
+![在这里插入图片描述](https://img-blog.csdnimg.cn/20201105181940337.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1NTc0MTgw,size_16,color_FFFFFF,t_70#pic_center)
+
+
 <font size=4>3、pom文件：
 
 ```java
@@ -43,7 +49,8 @@
 
 <font size=4>正确示例：
 
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20201105180307693.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1NTc0MTgw,size_16,color_FFFFFF,t_70#pic_center =1000x200)
+![在这里插入图片描述](https://img-blog.csdnimg.cn/20201105182153885.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1NTc0MTgw,size_16,color_FFFFFF,t_70#pic_center)
+
 <font size=4> 8、启动消息消费者端，看看控制器是否补单成功，是否只有一个外卖小哥抢到订单。
 
 <font size=4>  正确示例：
